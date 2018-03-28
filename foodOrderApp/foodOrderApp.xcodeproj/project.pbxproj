@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487777F206B9B8C006B0365 /* RegisterViewController.swift */; };
 		7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */; };
-		7B978EDD2063B1D600ABB0D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDC2063B1D600ABB0D5 /* ViewController.swift */; };
+		7B978EDD2063B1D600ABB0D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDC2063B1D600ABB0D5 /* LoginViewController.swift */; };
 		7B978EE02063B1D600ABB0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B978EDE2063B1D600ABB0D5 /* Main.storyboard */; };
 		7B978EE32063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EE12063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld */; };
 		7B978EE52063B1D600ABB0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B978EE42063B1D600ABB0D5 /* Assets.xcassets */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1487777F206B9B8C006B0365 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B978ED72063B1D600ABB0D5 /* foodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B978EDC2063B1D600ABB0D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B978EDC2063B1D600ABB0D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7B978EDF2063B1D600ABB0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B978EE22063B1D600ABB0D5 /* foodOrderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = foodOrderApp.xcdatamodel; sourceTree = "<group>"; };
 		7B978EE42063B1D600ABB0D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14009552206B9E5C000829EC /* WebModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebModel;
+			sourceTree = "<group>";
+		};
+		1418EA32206B96FD00506E77 /* HelpFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */,
+				7B978EE42063B1D600ABB0D5 /* Assets.xcassets */,
+				7B978EE62063B1D600ABB0D5 /* LaunchScreen.storyboard */,
+				7B978EE12063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld */,
+			);
+			path = HelpFiles;
+			sourceTree = "<group>";
+		};
+		1487777E206B97C2006B0365 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				7B978EDC2063B1D600ABB0D5 /* LoginViewController.swift */,
+				1487777F206B9B8C006B0365 /* RegisterViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		7B978ECE2063B1D600ABB0D5 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +128,11 @@
 		7B978ED92063B1D600ABB0D5 /* foodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
-				7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */,
-				7B978EDC2063B1D600ABB0D5 /* ViewController.swift */,
+				14009552206B9E5C000829EC /* WebModel */,
+				1487777E206B97C2006B0365 /* Account */,
 				7B978EDE2063B1D600ABB0D5 /* Main.storyboard */,
-				7B978EE42063B1D600ABB0D5 /* Assets.xcassets */,
-				7B978EE62063B1D600ABB0D5 /* LaunchScreen.storyboard */,
 				7B978EE92063B1D600ABB0D5 /* Info.plist */,
-				7B978EE12063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld */,
+				1418EA32206B96FD00506E77 /* HelpFiles */,
 			);
 			path = foodOrderApp;
 			sourceTree = "<group>";
@@ -262,9 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B978EDD2063B1D600ABB0D5 /* ViewController.swift in Sources */,
+				7B978EDD2063B1D600ABB0D5 /* LoginViewController.swift in Sources */,
 				7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */,
 				7B978EE32063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld in Sources */,
+				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = na.foodOrderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -450,7 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = na.foodOrderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
