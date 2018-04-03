@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak private var passwordPlaceHolder: UITextField!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -24,13 +25,18 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction private func touchedLogin(_ sender: UIButton) {
+        FOSNetworking.get(url: address, parameters: ["test": "lol"], success: {
+            (result: Dictionary<String, Any?>?) in
+            print(result)
+        }, failture: {(reason: String) in
+            print(reason)
+        })
         guard accountPlaceHolder.text != nil && passwordPlaceHolder.text != nil  else {
             return
         }
         let account = accountPlaceHolder.text!
         let password = passwordPlaceHolder.text!
-        print(account)
-        print(password)
+        
     }
     
 
