@@ -1,5 +1,4 @@
 # Online Food Order Service
-
 (中文版本请参看[这里](#foodOrder_cn))
 
 ## Environment Requirements
@@ -12,7 +11,7 @@
 > 2. IOS 8.0+
 > 3. CocoaPod
 
-## Running Instructions
+## Setup and Running Instructions
 ### Server
 > 1. Transfer to the ```FoodOrderServer``` directory which includes the ```pom.xml``` file.
 > 2. Run ```mvn package``` in the terminal and waiting for package finished.
@@ -31,4 +30,27 @@
 ### Client
 
 
-## <a name="foodOrder_cn">Whatever</a>
+## <a name="foodOrder_cn"></a>
+# 在线点菜系统
+
+## 环境要求
+### 服务器程序
+> 1. JDK 1.8+
+> 2. Maven
+
+### 客户端程序
+> 1. Xcode 7.0+
+> 2. IOS 8.0+
+> 3. CocoaPod
+
+## 环境搭建及运行指令
+###服务器程序
+> 1. 从 ```终端```中打开 ```FoodOrderServer```文件夹，查看文件夹中是否存在```pom.xml```文件以确保路径正确。
+> 2. 运行 ```mvn package```，等待打包完成。
+> 3. 运行 ```mvn exec:java``` 指令。
+
+###客户端程序
+> 1. 从 ```终端```中打开 ```foodOrderApp``` 文件夹，查看文件夹中是否存在```Podfile```文件以确保路径正确。
+> 2. 在 ```终端```中运行 ```pod install``` 指令。 （仅第一次执行）
+> 3. 在 ```终端```中运行 ```open foodOrderApp.xcworkspace``` 指令来通过 Xcode 打开项目。
+> 4. 选择任意Ipad 设备，点击 Xcode 左上角的绿色播放按钮来运行客户端.
