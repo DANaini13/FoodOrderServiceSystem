@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction private func touchedLogin(_ sender: UIButton) {
-        FOSNetworking.get(url: address, parameters: ["test": "lol"], success: {
+        FOSNetworking.get(url: address, paras: ["test": "lol"], success: {
             (result: Dictionary<String, Any?>?) in
             print(result)
         }, failture: {(reason: String) in

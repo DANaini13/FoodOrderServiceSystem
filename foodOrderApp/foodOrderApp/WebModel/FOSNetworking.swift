@@ -11,17 +11,17 @@ import AFNetworking
 
 let address:String = "http://localhost:8888"
 
-class FOSNetworking : NSObject {
-    class func get(url: String, parameters: Dictionary<String, Any?>?,
+class FOSNetworking {
+    class func get(url: String, paras: Dictionary<String, Any?>?,
                    success: (Dictionary<String, Any?>?) -> Void,
         failture:(String) -> Void){
         let manager = AFHTTPSessionManager()
-        manager.responseSerializer = AFHTTPResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html") as! Set<String>
-        manager.get(url, parameters: parameters, success: {
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.get(url, parameters: paras, success: {
             (operation: URLSessionTask, resopnseObj: Any?) in
-            print(resopnseObj)
-            print(resopnseObj as? Dictionary<String, Any?>)
+            print("JSON: " + resopnseObj.debugDescription)
+            let value = resopnseObj! as? Dictionary<String, Any>
+            print(value)
         }, failure:{
             (operation: URLSessionDataTask?, error: Error) in
                 print(error.localizedDescription)

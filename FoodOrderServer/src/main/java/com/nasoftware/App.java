@@ -1,5 +1,8 @@
 package com.nasoftware;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -56,9 +59,15 @@ public class App {
                 PrintWriter pw = new PrintWriter(socket.getOutputStream());
 
                 pw.println("HTTP/1.1 200 OK");
-                pw.println("Content-type:text/html");
+                pw.println("Content-type:application/json");
                 pw.println();
-                pw.println("<h1>Hello!</h1>");
+                JSONObject json = new JSONObject();
+                try {
+                    json.put("test", "lol");
+                    pw.println(json.toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                 pw.flush();
                 socket.close();
