@@ -1,6 +1,6 @@
 # Online Food Order Service
 
-(中文版本请参看[这里](f#foodOrder_cn))
+(中文版本请参看[这里](#foodOrder_cn))
 
 ## Environment Requirements
 ### Server
