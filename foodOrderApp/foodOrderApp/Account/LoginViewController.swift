@@ -12,34 +12,45 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak private var accountPlaceHolder: UITextField!
     @IBOutlet weak private var passwordPlaceHolder: UITextField!
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction private func touchedLogin(_ sender: UIButton) {
-        FOSNetworking.get(url: address, paras: ["test": "lol"], success: {
-            (result: Dictionary<String, Any?>?) in
-            print(result)
-        }, failture: {(reason: String) in
-            print(reason)
-        })
-        guard accountPlaceHolder.text != nil && passwordPlaceHolder.text != nil  else {
+        guard accountPlaceHolder.text != "" && passwordPlaceHolder.text != ""  else {
+            let alertController = UIAlertController(title: "Hint", message: "plase fill out the account and password!", preferredStyle: .alert)
+            let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                action in
+            })
+            alertController.addAction(okAcount)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         let account = accountPlaceHolder.text!
         let password = passwordPlaceHolder.text!
-        
+        AccountService.login(account: account, password: password, callBack: { (result) in
+            if result == "SUCCESS" {
+                self.performSegue(withIdentifier: "mainSection", sender: self)
+            }else {
+                let alertController = UIAlertController(title: "Hint", message: result, preferredStyle: .alert)
+                let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                    action in
+                })
+                alertController.addAction(okAcount)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        })
     }
     
-
+    
     
 }
 

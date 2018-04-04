@@ -1,6 +1,25 @@
 package com.nasoftware;
 
+import com.nasoftware.NetworkLayer.ServerManager;
 import java.sql.*;
+
+/**
+ * Protocol Explanation:
+ * HTTP GET:
+ * Login
+ * {
+ *     command:login
+ *     account:*******
+ *     password:*******
+ * }
+ * Sign Up
+ * {
+ *     command:signUp
+ *     account:********
+ *     password:********
+ * }
+ */
+
 
 public class App {
 

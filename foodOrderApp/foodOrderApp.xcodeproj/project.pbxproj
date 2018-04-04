@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */; };
+		1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422D24720744CE000B5F1F6 /* AccountService.swift */; };
 		14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487777F206B9B8C006B0365 /* RegisterViewController.swift */; };
 		41B4D059C4AFF6169161B37A /* Pods_foodOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C474922D4F7A8606CDF763 /* Pods_foodOrderApp.framework */; };
 		7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOSNetworking.swift; sourceTree = "<group>"; };
+		1422D24720744CE000B5F1F6 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		1487777F206B9B8C006B0365 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B978ED72063B1D600ABB0D5 /* foodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */,
+				1422D24720744CE000B5F1F6 /* AccountService.swift */,
 			);
 			path = WebModel;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				7B978EDD2063B1D600ABB0D5 /* LoginViewController.swift in Sources */,
 				7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */,
 				7B978EE32063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld in Sources */,
+				1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */,
 				1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */,
 				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
 			);

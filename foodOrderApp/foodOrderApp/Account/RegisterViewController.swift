@@ -19,12 +19,12 @@ class RegisterViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction private func touchedRegister(_ sender: UIButton) {
         guard accountPlaceHolder.text != nil else {
             return
