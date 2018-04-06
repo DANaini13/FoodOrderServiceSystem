@@ -80,7 +80,7 @@ public class AccountDataService {
             FileOutputStream out = null;
             File file = new File("Data/accounts.xml");
             out = new FileOutputStream(file);
-            xmlOutput.output(document, System.out);
+            xmlOutput.output(document, out);
         } catch (IOException e) {
             e.printStackTrace();
         }
