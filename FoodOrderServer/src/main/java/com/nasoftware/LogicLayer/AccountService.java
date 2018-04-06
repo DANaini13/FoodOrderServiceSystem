@@ -26,7 +26,7 @@ public class AccountService {
         if(AccountDataService.addAccount(account, password)) {
             args.put("result", "success");
         }else {
-            args.put("result", "account exist!");
+            args.put("result", "sorry, the account already exist!");
         }
         callback.handler(args);
     }

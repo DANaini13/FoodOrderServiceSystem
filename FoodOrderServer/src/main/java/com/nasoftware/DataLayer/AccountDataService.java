@@ -7,6 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import org.jdom2.*;
 import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
 public class AccountDataService {
     static private HashMap<String, String> accountMap;
@@ -60,6 +62,28 @@ public class AccountDataService {
             return false;
         }
         accountMap.put(account, password);
+        Element rootElement = new Element("accounts");
+        Document document = new Document(rootElement);
+        Iterator it = accountMap.entrySet().iterator();
+        while(it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            Element accountElement = new Element("account");
+            accountElement.setAttribute(new Attribute("accountID", (String)entry.getKey()));
+            Element passwordElement = new Element("password");
+            passwordElement.setText((String) entry.getValue());
+            accountElement.addContent(passwordElement);
+            document.getRootElement().addContent(accountElement);
+        }
+        XMLOutputter xmlOutput = new XMLOutputter();
+        xmlOutput.setFormat(Format.getPrettyFormat());
+        try {
+            FileOutputStream out = null;
+            File file = new File("Data/accounts.xml");
+            out = new FileOutputStream(file);
+            xmlOutput.output(document, System.out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         lock.unlock();
         return true;
     }
