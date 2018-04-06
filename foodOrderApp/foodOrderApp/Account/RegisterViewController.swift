@@ -26,12 +26,39 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction private func touchedRegister(_ sender: UIButton) {
-        guard accountPlaceHolder.text != nil else {
+        guard accountPlaceHolder.text != "" && passwordPlaceHolder.text != "" && confrimPlaceHolder.text != "" else {
+            let alertController = UIAlertController(title: "sign up failed!", message: "plase fill out the account and password!", preferredStyle: .alert)
+            let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                action in
+            })
+            alertController.addAction(okAcount)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
-        guard passwordPlaceHolder.text == confrimPlaceHolder.text && confrimPlaceHolder.text != nil else {
+        guard passwordPlaceHolder.text == confrimPlaceHolder.text else {
+            let alertController = UIAlertController(title: "sign up failed!", message: "password does not match the confrimation!", preferredStyle: .alert)
+            let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                action in
+            })
+            alertController.addAction(okAcount)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
+        if let account = accountPlaceHolder.text, let password = passwordPlaceHolder.text {
+            AccountService.signUp(account: account, password: password) { (result) in
+                if result == "success" {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    let alertController = UIAlertController(title: "sign up failed!", message: result, preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAcount)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
     }
     
 }

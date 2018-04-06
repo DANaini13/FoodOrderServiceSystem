@@ -14,7 +14,9 @@ class AccountService {
                                                               "account": account,
                                                               "password": password]
             ,success: {(result) in
-                callBack("SUCCESS")
+                if let value = result {
+                    callBack(value["result"] as! String)
+                }
         }, failture: { (errorDescription) in
             callBack(errorDescription)
         })
@@ -25,7 +27,9 @@ class AccountService {
                                                               "account": account,
                                                               "password": password]
             ,success: {(result) in
-                callBack("SUCCESS")
+                if let value = result {
+                    callBack(value["result"] as! String)
+                }
         }, failture: { (errorDescription) in
             callBack(errorDescription)
         })

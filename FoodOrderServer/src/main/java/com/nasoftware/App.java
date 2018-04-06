@@ -1,7 +1,7 @@
 package com.nasoftware;
 
+import com.nasoftware.DataLayer.AccountDataService;
 import com.nasoftware.NetworkLayer.ServerManager;
-import java.sql.*;
 
 /**
  * Protocol Explanation:
@@ -23,8 +23,9 @@ import java.sql.*;
 
 public class App {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         System.out.println("Server start!");
+        AccountDataService.init();
         ServerManager serverManager = new ServerManager(8888);
         serverManager.start();
     }

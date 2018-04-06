@@ -42,7 +42,7 @@ public class Server extends Thread {
                     System.out.println(requestHeader);
                     if (requestHeader.startsWith("GET")) {
                         int begin = requestHeader.indexOf("/?") + 2;
-                        int end = requestHeader.indexOf("HTTP/");
+                        int end = requestHeader.indexOf(" HTTP/");
                         String condition = requestHeader.substring(begin, end);
                         HashMap args = JsonParser.parseJSON(condition);
                         CommandDispatcher.dispatchComman(args, (HashMap<String, String> resultObj) -> {

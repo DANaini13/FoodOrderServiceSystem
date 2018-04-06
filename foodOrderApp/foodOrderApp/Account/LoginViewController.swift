@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     @IBAction private func touchedLogin(_ sender: UIButton) {
         guard accountPlaceHolder.text != "" && passwordPlaceHolder.text != ""  else {
-            let alertController = UIAlertController(title: "Hint", message: "plase fill out the account and password!", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "login failed!", message: "plase fill out the account and password!", preferredStyle: .alert)
             let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
                 action in
             })
@@ -37,10 +37,10 @@ class LoginViewController: UIViewController {
         let account = accountPlaceHolder.text!
         let password = passwordPlaceHolder.text!
         AccountService.login(account: account, password: password, callBack: { (result) in
-            if result == "SUCCESS" {
+            if result == "success" {
                 self.performSegue(withIdentifier: "mainSection", sender: self)
             }else {
-                let alertController = UIAlertController(title: "Hint", message: result, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "login failed!", message: result, preferredStyle: .alert)
                 let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
                     action in
                 })
