@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */; };
+		14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */; };
 		1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422D24720744CE000B5F1F6 /* AccountService.swift */; };
-		14716DB32077B2A300FAFD0D /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14716DB22077B2A300FAFD0D /* ManagerViewController.swift */; };
 		14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487777F206B9B8C006B0365 /* RegisterViewController.swift */; };
+		14B2A5862078D3650047EE1E /* FoodOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */; };
+		14FD96372078DD2C006539A2 /* MenuManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */; };
 		41B4D059C4AFF6169161B37A /* Pods_foodOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C474922D4F7A8606CDF763 /* Pods_foodOrderApp.framework */; };
 		7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */; };
 		7B978EDD2063B1D600ABB0D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDC2063B1D600ABB0D5 /* LoginViewController.swift */; };
@@ -41,9 +43,11 @@
 
 /* Begin PBXFileReference section */
 		1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOSNetworking.swift; sourceTree = "<group>"; };
+		14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		1422D24720744CE000B5F1F6 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		14716DB22077B2A300FAFD0D /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		1487777F206B9B8C006B0365 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderTableViewController.swift; sourceTree = "<group>"; };
+		14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManageTableViewController.swift; sourceTree = "<group>"; };
 		7B978ED72063B1D600ABB0D5 /* foodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B978EDC2063B1D600ABB0D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +116,8 @@
 		14716DB12077B27C00FAFD0D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				14716DB22077B2A300FAFD0D /* ManagerViewController.swift */,
+				14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */,
+				14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -124,6 +129,14 @@
 				1487777F206B9B8C006B0365 /* RegisterViewController.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		14B2A5842078D3470047EE1E /* foodOrder */ = {
+			isa = PBXGroup;
+			children = (
+				14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */,
+			);
+			path = foodOrder;
 			sourceTree = "<group>";
 		};
 		5FC51ADAB303F68F54428AB0 /* Pods */ = {
@@ -160,6 +173,7 @@
 		7B978ED92063B1D600ABB0D5 /* foodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				14B2A5842078D3470047EE1E /* foodOrder */,
 				14716DB12077B27C00FAFD0D /* Manager */,
 				14009552206B9E5C000829EC /* WebModel */,
 				1487777E206B97C2006B0365 /* Account */,
@@ -371,13 +385,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B2A5862078D3650047EE1E /* FoodOrderTableViewController.swift in Sources */,
 				7B978EDD2063B1D600ABB0D5 /* LoginViewController.swift in Sources */,
 				7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */,
 				7B978EE32063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld in Sources */,
+				14FD96372078DD2C006539A2 /* MenuManageTableViewController.swift in Sources */,
+				14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */,
 				1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */,
 				1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */,
 				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
-				14716DB32077B2A300FAFD0D /* ManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
