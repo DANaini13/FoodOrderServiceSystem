@@ -10,6 +10,7 @@
 		1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */; };
 		14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */; };
 		1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422D24720744CE000B5F1F6 /* AccountService.swift */; };
+		147811DF207E49350046A492 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147811DE207E49350046A492 /* MenuService.swift */; };
 		14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487777F206B9B8C006B0365 /* RegisterViewController.swift */; };
 		14B2A5862078D3650047EE1E /* FoodOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */; };
 		14FD96372078DD2C006539A2 /* MenuManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */; };
@@ -45,6 +46,7 @@
 		1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOSNetworking.swift; sourceTree = "<group>"; };
 		14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		1422D24720744CE000B5F1F6 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		147811DE207E49350046A492 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		1487777F206B9B8C006B0365 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderTableViewController.swift; sourceTree = "<group>"; };
 		14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManageTableViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */,
 				1422D24720744CE000B5F1F6 /* AccountService.swift */,
+				147811DE207E49350046A492 /* MenuService.swift */,
 			);
 			path = WebModel;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */,
 				1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */,
 				1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */,
+				147811DF207E49350046A492 /* MenuService.swift in Sources */,
 				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

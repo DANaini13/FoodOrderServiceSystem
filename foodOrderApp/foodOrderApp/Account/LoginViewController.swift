@@ -22,7 +22,12 @@ class LoginViewController: UIViewController {
                 if result == "success" {
                     self.performSegue(withIdentifier: "mainSection", sender: self)
                 }else {
-                }
+                    let alertController = UIAlertController(title: "login failed!", message: result, preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAcount)
+                    self.present(alertController, animated: true, completion: nil)                }
             })
         }
     }

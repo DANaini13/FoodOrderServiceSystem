@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="855" y="784"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Menu Manage Table View Controller-->
         <scene sceneID="y42-Nw-qDw">
             <objects>
-                <tableViewController id="fOl-wc-ouL" sceneMemberID="viewController">
+                <tableViewController id="fOl-wc-ouL" customClass="MenuManageTableViewController" customModule="foodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Yo-Ox-xfb">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -15,9 +15,11 @@ class AccountService {
                                                               "password": password]
             ,success: {(result) in
                 if let value = result {
+                    print("================================ 登陆成功 ================================")
                     callBack(value["result"] as! String)
                 }
         }, failture: { (errorDescription) in
+            print("================================ 登陆失败 ================================")
             callBack(errorDescription)
         })
     }
@@ -28,9 +30,11 @@ class AccountService {
                                                               "password": password]
             ,success: {(result) in
                 if let value = result {
+                    print("================================ 注册成功 ================================")
                     callBack(value["result"] as! String)
                 }
         }, failture: { (errorDescription) in
+            print("================================ 注册失败 ================================")
             callBack(errorDescription)
         })
     }
