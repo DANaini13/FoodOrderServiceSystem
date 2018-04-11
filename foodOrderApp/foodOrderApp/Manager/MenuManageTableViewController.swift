@@ -11,18 +11,31 @@ import UIKit
 class MenuManageTableViewController: UITableViewController {
     
     var data:[(String, String)] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let accountTemp = UserDefaults.standard.string(forKey: "account")
         if let account = accountTemp {
-            MenuService.getMenu(account: account, callBack:  {(result) in
-                
+            MenuService.getMenu(account: account, callBack:  {[weak self] (result) in
+                guard result["error"]! == "0" else {
+                    let alertController = UIAlertController(title: "获取菜单失败！", message: result["error"], preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAcount)
+                    self?.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                for (key, value) in result {
+                    if key == "error" {
+                        continue
+                    }
+                    self?.data.append((key, "价格：" + value))
+                }
+                self?.tableView.reloadData()
             })
         }
     }
-
-        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,23 +46,20 @@ class MenuManageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.data.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuItemCell", for: indexPath)
+        cell.textLabel?.text = self.data[indexPath.row].0
+        cell.detailTextLabel?.text = self.data[indexPath.row].1
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

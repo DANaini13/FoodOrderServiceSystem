@@ -27,7 +27,8 @@ class LoginViewController: UIViewController {
                         action in
                     })
                     alertController.addAction(okAcount)
-                    self.present(alertController, animated: true, completion: nil)                }
+                    self.present(alertController, animated: true, completion: nil)
+                }
             })
         }
     }

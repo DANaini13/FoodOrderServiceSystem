@@ -16,8 +16,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nasoftware/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            <state relative-caret-position="455">
+              <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +81,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/DataLayer/AccountDataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/DataLayer/MenuDataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/LogicLayer/AccountService.java" />
-        <option value="$PROJECT_DIR$/Data/menus.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/LogicLayer/CommandDispatcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/LogicLayer/MenuService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nasoftware/LogicLayer/ComplitionHandler.java" />
+        <option value="$PROJECT_DIR$/Data/menus.xml" />
       </list>
     </option>
   </component>
@@ -97,8 +97,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="378" />
-    <option name="y" value="23" />
+    <option name="x" value="434" />
+    <option name="y" value="58" />
     <option name="width" value="1439" />
     <option name="height" value="976" />
   </component>
@@ -295,7 +295,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="378" y="23" width="1439" height="976" extended-state="0" />
+    <frame x="434" y="58" width="1439" height="976" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -714,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/menus.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nasoftware/LogicLayer/ComplitionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -802,10 +795,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Data/menus.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nasoftware/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        <state relative-caret-position="455">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -7,6 +7,9 @@
     <food foodName = "大腰子">
       <price>16.9</price>
     </food>
+    <food foodName = "地三鲜">
+      <price>35</price>
+    </food>
   </menu>
   <menu accountID = "CCUTlmh">
     <food foodName = "咸猪手">

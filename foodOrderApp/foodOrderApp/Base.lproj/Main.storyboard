@@ -193,7 +193,7 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="5wN-Ce-cVe" detailTextLabel="QME-KL-OJB" rowHeight="88" style="IBUITableViewCellStyleSubtitle" id="yC1-e5-icA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" textLabel="5wN-Ce-cVe" detailTextLabel="QME-KL-OJB" rowHeight="88" style="IBUITableViewCellStyleSubtitle" id="yC1-e5-icA">
                                 <rect key="frame" x="0.0" y="28" width="768" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yC1-e5-icA" id="Seh-hi-CDs">
