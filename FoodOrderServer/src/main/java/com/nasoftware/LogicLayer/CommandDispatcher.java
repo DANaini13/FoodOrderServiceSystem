@@ -1,4 +1,5 @@
 package com.nasoftware.LogicLayer;
+
 import java.util.HashMap;
 
 public class CommandDispatcher {
@@ -7,6 +8,7 @@ public class CommandDispatcher {
         switch (command) {
             case "login": AccountService.login(args.get("account"), args.get("password"), callBack); break;
             case "signUp": AccountService.signUp(args.get("account"), args.get("password"), callBack); break;
+            case "getMenu": MenuService.getMenu(args.get("account"), callBack); break;
         }
     }
 }

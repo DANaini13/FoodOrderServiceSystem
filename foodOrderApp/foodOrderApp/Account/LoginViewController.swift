@@ -14,9 +14,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak private var passwordPlaceHolder: UITextField!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let accountTemp = UserDefaults.standard.string(forKey: "account")
+        let passwordTemp = UserDefaults.standard.string(forKey: "password")
+        if let account = accountTemp, let password = passwordTemp {
+            AccountService.login(account: account, password: password, callBack: { (result) in
+                if result == "success" {
+                    self.performSegue(withIdentifier: "mainSection", sender: self)
+                }else {
+                }
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +46,8 @@ class LoginViewController: UIViewController {
         let password = passwordPlaceHolder.text!
         AccountService.login(account: account, password: password, callBack: { (result) in
             if result == "success" {
+                UserDefaults.standard.set(account, forKey: "account")
+                UserDefaults.standard.set(password, forKey: "password")
                 self.performSegue(withIdentifier: "mainSection", sender: self)
             }else {
                 let alertController = UIAlertController(title: "login failed!", message: result, preferredStyle: .alert)

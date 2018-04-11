@@ -1,7 +1,5 @@
 package com.nasoftware.LogicLayer;
-
 import com.nasoftware.DataLayer.AccountDataService;
-
 import java.util.HashMap;
 
 public class AccountService {
