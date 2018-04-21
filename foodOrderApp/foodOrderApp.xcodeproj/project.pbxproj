@@ -13,6 +13,7 @@
 		147811DF207E49350046A492 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147811DE207E49350046A492 /* MenuService.swift */; };
 		14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487777F206B9B8C006B0365 /* RegisterViewController.swift */; };
 		14B2A5862078D3650047EE1E /* FoodOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */; };
+		14F5E610208BFB2300EB8B86 /* RemoveFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5E60F208BFB2300EB8B86 /* RemoveFoodViewController.swift */; };
 		14FD96372078DD2C006539A2 /* MenuManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */; };
 		41B4D059C4AFF6169161B37A /* Pods_foodOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C474922D4F7A8606CDF763 /* Pods_foodOrderApp.framework */; };
 		7B978EDB2063B1D600ABB0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		147811DE207E49350046A492 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		1487777F206B9B8C006B0365 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		14B2A5852078D3650047EE1E /* FoodOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderTableViewController.swift; sourceTree = "<group>"; };
+		14F5E60F208BFB2300EB8B86 /* RemoveFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFoodViewController.swift; sourceTree = "<group>"; };
 		14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManageTableViewController.swift; sourceTree = "<group>"; };
 		7B978ED72063B1D600ABB0D5 /* foodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B978EDA2063B1D600ABB0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */,
+				14F5E60F208BFB2300EB8B86 /* RemoveFoodViewController.swift */,
 				14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */,
 			);
 			path = Manager;
@@ -278,7 +281,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = NAsoftware;
 				TargetAttributes = {
 					7B978ED62063B1D600ABB0D5 = {
@@ -396,6 +399,7 @@
 				14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */,
 				1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */,
 				1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */,
+				14F5E610208BFB2300EB8B86 /* RemoveFoodViewController.swift in Sources */,
 				147811DF207E49350046A492 /* MenuService.swift in Sources */,
 				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
 			);
@@ -466,6 +470,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -473,6 +478,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -523,6 +529,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -530,6 +537,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

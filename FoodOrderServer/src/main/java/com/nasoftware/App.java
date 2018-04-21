@@ -49,6 +49,13 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *     itemName: name
  *     itemPrice: price
  * }
+ *
+ * Remove Menu Item
+ * {
+ *     command:removeMenuItem
+ *     account:*******
+ *     itemName: name
+ * }
  */
 
 

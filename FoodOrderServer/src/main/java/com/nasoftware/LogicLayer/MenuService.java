@@ -25,4 +25,13 @@ public class MenuService {
             result.put("error", "要添加的菜单项已经存在啦");
         callback.handler(result);
     }
+
+    public static void removeMenuItem(String account, String menuItem, ComplitionHandler callback) {
+        HashMap<String, String> result = new HashMap<>();
+        if(MenuDataService.removeMenuItem(account, menuItem))
+            result.put("error", "0");
+        else
+            result.put("error", "找不到您要移除的菜单项");
+        callback.handler(result);
+    }
 }

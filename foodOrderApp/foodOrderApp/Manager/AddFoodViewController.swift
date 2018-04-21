@@ -36,9 +36,24 @@ class AddFoodViewController: UIViewController {
             return
         }
         let accountTemp = UserDefaults.standard.string(forKey: "account")
-        print(foodNameTextField.text!)
-        MenuService.addMenuItem(account: accountTemp!, foodName: foodNameTextField.text!, price: foodPriceTextField.text!) { (result) in
-            
+        MenuService.addMenuItem(account: accountTemp!, foodName: foodNameTextField.text!, price: foodPriceTextField.text!) { [weak self] (result) in
+            if result == "success" {
+                if let food = self!.foodNameTextField.text, let price = self!.foodPriceTextField.text {
+                    let alertController = UIAlertController(title: "添加成功", message: "菜单项：\(food)  价格：\(price)", preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "好的", style: .cancel, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAcount)
+                    self?.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                let alertController = UIAlertController(title: "添加失败", message: result, preferredStyle: .alert)
+                let okAcount = UIAlertAction(title: "好的", style: .cancel, handler: {
+                    action in
+                })
+                alertController.addAction(okAcount)
+                self?.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     

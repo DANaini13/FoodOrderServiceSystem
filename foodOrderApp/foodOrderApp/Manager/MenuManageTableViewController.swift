@@ -14,6 +14,16 @@ class MenuManageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateData()
+        self.tableView.reloadData()
+    }
+    
+    func updateData() {
+        data = []
         let accountTemp = UserDefaults.standard.string(forKey: "account")
         if let account = accountTemp {
             MenuService.getMenu(account: account, callBack:  {[weak self] (result) in

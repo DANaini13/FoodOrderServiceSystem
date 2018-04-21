@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menus>
   <menu accountID="shan27">
-    <food foodName="地三鲜">
-      <price>35</price>
+    <food foodName="chicken">
+      <price>56.8</price>
     </food>
-    <food foodName="咸猪手">
-      <price>25.8</price>
+    <food foodName="shrimp">
+      <price>36</price>
     </food>
-    <food foodName="大腰子">
-      <price>16.9</price>
+    <food foodName="beef">
+      <price>89</price>
     </food>
-  </menu>
-  <menu accountID="CCUTlmh">
-    <food foodName="咸猪手">
-      <price>35.8</price>
-    </food>
-    <food foodName="大腰子">
-      <price>26.9</price>
+    <food foodName="chicked">
+      <price>56.8</price>
     </food>
   </menu>
+  <menu accountID="CCUTlmh" />
 </menus>

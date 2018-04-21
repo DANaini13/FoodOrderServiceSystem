@@ -12,7 +12,8 @@ public class CommandDispatcher {
             case "login": AccountService.login(args.get("account"), args.get("password"), callBack); break;
             case "signUp": AccountService.signUp(args.get("account"), args.get("password"), callBack); break;
             case "getMenu": MenuService.getMenu(args.get("account"), callBack); break;
-            case "addMenuItem": MenuService.addMenuItem(args.get("account"), args.get("itemName"), args.get("itemPrice"), callBack);
+            case "addMenuItem": MenuService.addMenuItem(args.get("account"), args.get("itemName"), args.get("itemPrice"), callBack); break;
+            case "removeMenuItem": MenuService.removeMenuItem(args.get("account"), args.get("itemName"), callBack); break;
         }
     }
 }

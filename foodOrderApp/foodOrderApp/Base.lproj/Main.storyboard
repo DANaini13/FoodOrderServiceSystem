@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAa-sN-j7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.6875" y="783.984375"/>
+            <point key="canvasLocation" x="25" y="1176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h93-gj-bFG">
@@ -154,7 +154,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
                                         <state key="normal" title="菜单管理服务"/>
                                         <connections>
-                                            <segue destination="fOl-wc-ouL" kind="show" id="Iu3-jI-Zjl"/>
+                                            <segue destination="5pG-DJ-97G" kind="show" id="Y5t-gg-2SY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-vd-3jt">
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yX-ga-xeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="784"/>
+            <point key="canvasLocation" x="855" y="1176"/>
         </scene>
         <!--Menu Manage Table View Controller-->
         <scene sceneID="y42-Nw-qDw">
@@ -185,7 +185,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="coU-qC-fve">
-                            <rect key="frame" x="0.0" y="116" width="768" height="44"/>
+                            <rect key="frame" x="0.0" y="113" width="768" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="添加菜单项"/>
                             <connections>
@@ -193,22 +193,22 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" textLabel="5wN-Ce-cVe" detailTextLabel="QME-KL-OJB" rowHeight="88" style="IBUITableViewCellStyleSubtitle" id="yC1-e5-icA">
-                                <rect key="frame" x="0.0" y="28" width="768" height="88"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" textLabel="5wN-Ce-cVe" detailTextLabel="QME-KL-OJB" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="yC1-e5-icA">
+                                <rect key="frame" x="0.0" y="28" width="768" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yC1-e5-icA" id="Seh-hi-CDs">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5wN-Ce-cVe">
-                                            <rect key="frame" x="20" y="24" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="22" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QME-KL-OJB">
-                                            <rect key="frame" x="20" y="47.5" width="33" height="14.5"/>
+                                            <rect key="frame" x="20" y="45.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -219,10 +219,22 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <navigationItem key="navigationItem" id="K7b-e4-DM9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Suw-TN-sHL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fvb-jj-jJG">
+                                <rect key="frame" x="578" y="7" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="移除"/>
+                                <connections>
+                                    <segue destination="sKC-Ed-V85" kind="show" id="PM4-fS-obW"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSX-Od-BCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1547.65625" y="784.5703125"/>
+            <point key="canvasLocation" x="2553.90625" y="1175.9765625"/>
         </scene>
         <!--Add Food View Controller-->
         <scene sceneID="9Zp-z2-32Q">
@@ -233,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eWk-nJ-UdJ">
-                                <rect key="frame" x="319" y="255" width="130" height="160"/>
+                                <rect key="frame" x="319" y="299" width="130" height="160"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6F6-iP-XA4">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="80"/>
@@ -278,7 +290,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSM-xh-Cth" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="784"/>
+            <point key="canvasLocation" x="3425" y="1176"/>
+        </scene>
+        <!--Remove Food View Controller-->
+        <scene sceneID="T2W-jc-dHA">
+            <objects>
+                <viewController id="sKC-Ed-V85" customClass="RemoveFoodViewController" customModule="foodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgc-el-h3z">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-GQ-eII">
+                                <rect key="frame" x="302" y="286" width="164" height="160"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入要移除的菜单项" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U6l-pE-Qwt">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-bd-OOL">
+                                        <rect key="frame" x="66.5" y="130" width="31" height="30"/>
+                                        <state key="normal" title="移除"/>
+                                        <connections>
+                                            <action selector="touchRemoveButton:" destination="sKC-Ed-V85" eventType="touchUpInside" id="mzc-Zv-rnM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XjS-GQ-eII" firstAttribute="centerX" secondItem="SUE-Mx-UCb" secondAttribute="centerX" id="7rk-t7-MEr"/>
+                            <constraint firstItem="XjS-GQ-eII" firstAttribute="top" secondItem="SUE-Mx-UCb" secondAttribute="top" constant="222" id="bBH-lX-wjZ"/>
+                            <constraint firstItem="XjS-GQ-eII" firstAttribute="leading" secondItem="SUE-Mx-UCb" secondAttribute="leading" constant="302" id="phw-A0-fiJ"/>
+                            <constraint firstItem="SUE-Mx-UCb" firstAttribute="trailing" secondItem="XjS-GQ-eII" secondAttribute="trailing" constant="302" id="q2Q-7V-QK5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SUE-Mx-UCb"/>
+                    </view>
+                    <connections>
+                        <outlet property="foodNameTextField" destination="U6l-pE-Qwt" id="a56-Hf-K7j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="op6-lG-sR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3419.53125" y="1894.9218749999998"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eye-Xx-BuU">
+            <objects>
+                <navigationController id="5pG-DJ-97G" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bd8-mD-lnw">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fOl-wc-ouL" kind="relationship" relationship="rootViewController" id="V1l-wi-OcV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5l-DV-p2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="1176"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="wEd-5h-xtN">
@@ -306,7 +378,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85M-Rf-HPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="1477"/>
+            <point key="canvasLocation" x="25" y="2334"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tDQ-s7-cG9">
@@ -372,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsU-Z9-3ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855.46875" y="37.5"/>
+            <point key="canvasLocation" x="855" y="38"/>
         </scene>
     </scenes>
 </document>

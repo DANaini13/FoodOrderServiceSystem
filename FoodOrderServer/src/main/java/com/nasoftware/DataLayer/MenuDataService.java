@@ -66,7 +66,18 @@ public class MenuDataService {
 
     static public HashMap<String, HashMap<String, String>> getMenuMap() {
         lock.lock();
-        HashMap<String, HashMap<String, String>> result = menuMap;
+        HashMap<String, HashMap<String, String>> result = new HashMap<>();
+        Iterator<Map.Entry<String, HashMap<String, String>>> it = menuMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, HashMap<String, String>> entry = it.next();
+            Iterator<Map.Entry<String, String>> itemIt = (entry.getValue()).entrySet().iterator();
+            HashMap<String, String> target = new HashMap<>();
+            while (itemIt.hasNext()) {
+                Map.Entry<String, String> itemEntry = itemIt.next();
+                target.put(itemEntry.getKey(), itemEntry.getValue());
+            }
+            result.put(entry.getKey(), target);
+        }
         lock.unlock();
         return result;
     }
@@ -79,6 +90,19 @@ public class MenuDataService {
             return false;
         }
         menu.put(menuItem, price);
+        updateFile();
+        lock.unlock();
+        return true;
+    }
+
+    static public boolean removeMenuItem(String account, String menuItem) {
+        lock.lock();
+        HashMap<String, String> menu = menuMap.get(account);
+        if(!menu.containsKey(menuItem)) {
+            lock.unlock();
+            return false;
+        }
+        menu.remove(menuItem);
         updateFile();
         lock.unlock();
         return true;

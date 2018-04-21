@@ -23,16 +23,33 @@ class MenuService {
         })
     }
     
-    class func addMenuItem(account: String, foodName: String, price: String, callBack:@escaping ([String: String]) -> Void) {
-        let newStr = String(utf8String: foodName.cString(using: .utf8)!)
+    class func addMenuItem(account: String, foodName: String, price: String, callBack:@escaping (String) -> Void) {
         FOSNetworking.get(url: FOSNetworking.address, paras: ["command": "addMenuItem",
                                                               "account": account,
-                                                              "itemName": newStr!,
+                                                              "itemName": foodName,
                                                               "itemPrice": price]
             ,success: {(result) in
-                print("================================ 添加菜单项成功 ================================")
+                if result!["error"]! as! String == "0" {
+                    print("================================ 添加菜单项成功 ================================")
+                    callBack("success")
+                } else {
+                    print("================================ 添加菜单项失败 ================================")
+                    callBack(result!["error"]! as! String)
+                }
         }) { (errorDescription) in
             print("================================ 添加菜单项失败 ================================")
+            callBack(errorDescription);
+        }
+    }
+    
+    class func removeMenuItem(account: String, foodName: String, callBack:@escaping (String) -> Void) {
+        FOSNetworking.get(url: FOSNetworking.address, paras: ["command": "removeMenuItem",
+                                                              "account": account,
+                                                              "itemName": foodName]
+            , success: { (result) in
+                print("================================ 移除菜单项成功 ================================")
+        }) { (errorDescription) in
+            print("================================ 移除菜单项失败 ================================")
         }
     }
 }
