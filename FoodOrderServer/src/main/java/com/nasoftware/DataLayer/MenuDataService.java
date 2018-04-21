@@ -5,11 +5,16 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -64,5 +69,51 @@ public class MenuDataService {
         HashMap<String, HashMap<String, String>> result = menuMap;
         lock.unlock();
         return result;
+    }
+
+    static public boolean addMenuItem(String account, String menuItem, String price) {
+        lock.lock();
+        HashMap<String, String> menu = menuMap.get(account);
+        if(menu.containsKey(menuItem)) {
+            lock.unlock();
+            return false;
+        }
+        menu.put(menuItem, price);
+        updateFile();
+        lock.unlock();
+        return true;
+    }
+
+    static public void updateFile() {
+        Iterator<Map.Entry<String, HashMap<String, String>>> it = menuMap.entrySet().iterator();
+        Element rootElement = new Element("menus");
+        Document document = new Document(rootElement);
+        while (it.hasNext()) {
+            Map.Entry<String, HashMap<String, String>> entry = it.next();
+            Element menuElement = new Element("menu");
+            menuElement.setAttribute("accountID", entry.getKey());
+            Iterator<Map.Entry<String, String>> itemIt = (entry.getValue()).entrySet().iterator();
+            while (itemIt.hasNext()) {
+                Map.Entry<String, String> itemEntry = itemIt.next();
+                Element foodElement = new Element("food");
+                foodElement.setAttribute("foodName", itemEntry.getKey());
+                Element priceElement = new Element("price");
+                priceElement.setText(itemEntry.getValue());
+                foodElement.addContent(priceElement);
+                menuElement.addContent(foodElement);
+            }
+            rootElement.addContent(menuElement);
+        }
+
+        XMLOutputter xmlOutput = new XMLOutputter();
+        xmlOutput.setFormat(Format.getPrettyFormat());
+        try {
+            FileOutputStream out;
+            File file = new File("Data/menus.xml");
+            out = new FileOutputStream(file);
+            xmlOutput.output(document, out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

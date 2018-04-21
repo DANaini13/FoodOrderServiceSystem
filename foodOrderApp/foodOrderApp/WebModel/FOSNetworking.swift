@@ -12,7 +12,7 @@ import AFNetworking
 class FOSNetworking {
     static let address:String = "http://localhost:8888"
     
-    class func get(url: String, paras: Dictionary<String, Any?>?,
+    class func get(url: String, paras: Dictionary<String, String>?,
                    success: @escaping (Dictionary<String, Any?>?) -> Void,
                    failture:@escaping (String) -> Void){
         let manager = AFHTTPSessionManager()

@@ -22,4 +22,17 @@ class MenuService {
             callBack(["error": errorDescription])
         })
     }
+    
+    class func addMenuItem(account: String, foodName: String, price: String, callBack:@escaping ([String: String]) -> Void) {
+        let newStr = String(utf8String: foodName.cString(using: .utf8)!)
+        FOSNetworking.get(url: FOSNetworking.address, paras: ["command": "addMenuItem",
+                                                              "account": account,
+                                                              "itemName": newStr!,
+                                                              "itemPrice": price]
+            ,success: {(result) in
+                print("================================ 添加菜单项成功 ================================")
+        }) { (errorDescription) in
+            print("================================ 添加菜单项失败 ================================")
+        }
+    }
 }

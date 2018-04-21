@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menus>
-  <menu accountID = "shan27">
-    <food foodName = "咸猪手">
-      <price>25.8</price>
-    </food>
-    <food foodName = "大腰子">
-      <price>16.9</price>
-    </food>
-    <food foodName = "地三鲜">
+  <menu accountID="shan27">
+    <food foodName="地三鲜">
       <price>35</price>
     </food>
+    <food foodName="咸猪手">
+      <price>25.8</price>
+    </food>
+    <food foodName="大腰子">
+      <price>16.9</price>
+    </food>
   </menu>
-  <menu accountID = "CCUTlmh">
-    <food foodName = "咸猪手">
+  <menu accountID="CCUTlmh">
+    <food foodName="咸猪手">
       <price>35.8</price>
     </food>
-    <food foodName = "大腰子">
+    <food foodName="大腰子">
       <price>26.9</price>
     </food>
   </menu>

@@ -1,9 +1,11 @@
 package com.nasoftware.LogicLayer;
 import com.nasoftware.DataLayer.AccountDataService;
+import com.nasoftware.NetworkLayer.ComplitionHandler;
+
 import java.util.HashMap;
 
 public class AccountService {
-    static void login(String account, String password, ComplitionHandler callback) {
+    public static void login(String account, String password, ComplitionHandler callback) {
         HashMap<String, String> args = new HashMap<String, String>();
         HashMap accountMap = AccountDataService.getAccounts();
         if(accountMap.containsKey(account)) {
@@ -19,7 +21,7 @@ public class AccountService {
         callback.handler(args);
     }
 
-    static void signUp(String account, String password, ComplitionHandler callback) {
+    public static void signUp(String account, String password, ComplitionHandler callback) {
         HashMap<String, String> args = new HashMap<String, String>();
         if(AccountDataService.addAccount(account, password)) {
             args.put("result", "success");

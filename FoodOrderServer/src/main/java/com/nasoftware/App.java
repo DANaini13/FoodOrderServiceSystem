@@ -41,6 +41,14 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *     foodName2: price
  *     ....
  * }
+ *
+ * Add Menu Item
+ * {
+ *     command:addMenuItem
+ *     account:********
+ *     itemName: name
+ *     itemPrice: price
+ * }
  */
 
 

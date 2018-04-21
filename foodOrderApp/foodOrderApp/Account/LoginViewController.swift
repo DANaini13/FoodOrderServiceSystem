@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
                 if result == "success" {
                     self.performSegue(withIdentifier: "mainSection", sender: self)
                 }else {
-                    let alertController = UIAlertController(title: "login failed!", message: result, preferredStyle: .alert)
-                    let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                    let alertController = UIAlertController(title: "自动登录失败！请手动登录", message: result, preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "好吧", style: .cancel, handler: {
                         action in
                     })
                     alertController.addAction(okAcount)
@@ -40,8 +40,8 @@ class LoginViewController: UIViewController {
     
     @IBAction private func touchedLogin(_ sender: UIButton) {
         guard accountPlaceHolder.text != "" && passwordPlaceHolder.text != ""  else {
-            let alertController = UIAlertController(title: "login failed!", message: "plase fill out the account and password!", preferredStyle: .alert)
-            let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+            let alertController = UIAlertController(title: "登录失败", message: "请填写账号密码", preferredStyle: .alert)
+            let okAcount = UIAlertAction(title: "好的", style: .cancel, handler: {
                 action in
             })
             alertController.addAction(okAcount)
@@ -56,8 +56,8 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(password, forKey: "password")
                 self.performSegue(withIdentifier: "mainSection", sender: self)
             }else {
-                let alertController = UIAlertController(title: "login failed!", message: result, preferredStyle: .alert)
-                let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                let alertController = UIAlertController(title: "登录失败", message: result, preferredStyle: .alert)
+                let okAcount = UIAlertAction(title: "好的", style: .cancel, handler: {
                     action in
                 })
                 alertController.addAction(okAcount)

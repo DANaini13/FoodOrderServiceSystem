@@ -1,5 +1,4 @@
 package com.nasoftware.NetworkLayer;
-import com.nasoftware.LogicLayer.CommandDispatcher;
 import com.nasoftware.LogicLayer.JsonParser;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,12 +34,12 @@ public class Server extends Thread {
     @Override
     public void run() {
         try {
-            BufferedReader bd = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            BufferedReader bd = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
             String requestHeader;
                 int contentLength = 0;
                 while ((requestHeader = bd.readLine()) != null && !requestHeader.isEmpty()) {
-                    System.out.println(requestHeader);
                     if (requestHeader.startsWith("GET")) {
+                        System.out.println(requestHeader);
                         int begin = requestHeader.indexOf("/?") + 2;
                         int end = requestHeader.indexOf(" HTTP/");
                         String condition = requestHeader.substring(begin, end);

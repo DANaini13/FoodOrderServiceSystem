@@ -77,7 +77,7 @@ public class AccountDataService {
         XMLOutputter xmlOutput = new XMLOutputter();
         xmlOutput.setFormat(Format.getPrettyFormat());
         try {
-            FileOutputStream out = null;
+            FileOutputStream out;
             File file = new File("Data/accounts.xml");
             out = new FileOutputStream(file);
             xmlOutput.output(document, out);

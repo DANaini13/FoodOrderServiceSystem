@@ -1,4 +1,7 @@
-package com.nasoftware.LogicLayer;
+package com.nasoftware.NetworkLayer;
+
+import com.nasoftware.LogicLayer.AccountService;
+import com.nasoftware.LogicLayer.MenuService;
 
 import java.util.HashMap;
 
@@ -9,6 +12,7 @@ public class CommandDispatcher {
             case "login": AccountService.login(args.get("account"), args.get("password"), callBack); break;
             case "signUp": AccountService.signUp(args.get("account"), args.get("password"), callBack); break;
             case "getMenu": MenuService.getMenu(args.get("account"), callBack); break;
+            case "addMenuItem": MenuService.addMenuItem(args.get("account"), args.get("itemName"), args.get("itemPrice"), callBack);
         }
     }
 }

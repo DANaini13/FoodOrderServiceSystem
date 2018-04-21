@@ -1,0 +1,41 @@
+/**
+ * Protocol Explanation:
+ * HTTP GET:
+ * Login
+ * {
+ *     command:login
+ *     account:*******
+ *     password:*******
+ * }
+ *
+ * {
+ *     result:success | fail reason
+ * }
+ *
+ * Sign Up
+ * {
+ *     command:signUp
+ *     account:********
+ *     password:********
+ * }
+ *
+ * {
+ *     result:success | fail reason
+ * }
+ *
+ * Get Menu
+ * {
+ *     command:getMenu
+ *     account:********
+ * }
+ *
+ * {
+ *     error: 0 | fail reason
+ *     foodName1: price
+ *     foodName2: price
+ *     ....
+ * }
+ *
+ *
+ *
+ */

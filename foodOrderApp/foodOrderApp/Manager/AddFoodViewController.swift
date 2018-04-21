@@ -11,7 +11,8 @@ import UIKit
 class AddFoodViewController: UIViewController {
 
     @IBOutlet weak var foodNameTextField: UITextField!
-    @IBOutlet weak var foodPriceNameTextField: UITextField!
+    @IBOutlet weak var foodPriceTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,20 @@ class AddFoodViewController: UIViewController {
     }
     
     @IBAction func touchAdd(_ sender: UIButton) {
-        
+        guard foodNameTextField.text != "" && foodPriceTextField.text != "" else {
+            let alertController = UIAlertController(title: "添加失败", message: "请填写食物价格和名字", preferredStyle: .alert)
+            let okAcount = UIAlertAction(title: "好的", style: .cancel, handler: {
+                action in
+            })
+            alertController.addAction(okAcount)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        let accountTemp = UserDefaults.standard.string(forKey: "account")
+        print(foodNameTextField.text!)
+        MenuService.addMenuItem(account: accountTemp!, foodName: foodNameTextField.text!, price: foodPriceTextField.text!) { (result) in
+            
+        }
     }
-
+    
 }

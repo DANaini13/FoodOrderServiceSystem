@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="OQW-EV-dGX">
-                                <rect key="frame" x="338.5" y="397" width="92.5" height="230"/>
+                                <rect key="frame" x="338" y="397" width="92.5" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KJd-Dq-WuM">
                                         <rect key="frame" x="0.0" y="0.0" width="92.5" height="70"/>
@@ -76,7 +76,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎使用在线点菜系统" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2O-YI-L0P">
-                                <rect key="frame" x="297.5" y="249" width="173.5" height="20.5"/>
+                                <rect key="frame" x="297" y="249" width="173.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -231,9 +231,50 @@
                     <view key="view" contentMode="scaleToFill" id="iie-QP-Lfg">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eWk-nJ-UdJ">
+                                <rect key="frame" x="319" y="255" width="130" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6F6-iP-XA4">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="80"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入食物的名字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5OG-Bt-J2Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-Je-ac3">
+                                                <rect key="frame" x="0.0" y="50" width="130" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA7-7R-i2n">
+                                        <rect key="frame" x="49.5" y="130" width="31" height="30"/>
+                                        <state key="normal" title="添加"/>
+                                        <connections>
+                                            <action selector="touchAdd:" destination="4Ml-eG-12B" eventType="touchUpInside" id="MZp-WV-9TR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eWk-nJ-UdJ" firstAttribute="top" secondItem="kkp-Tk-Qk2" secondAttribute="top" constant="235" id="3U7-80-SFV"/>
+                            <constraint firstItem="eWk-nJ-UdJ" firstAttribute="leading" secondItem="kkp-Tk-Qk2" secondAttribute="leading" constant="319" id="41p-Lt-etN"/>
+                            <constraint firstItem="kkp-Tk-Qk2" firstAttribute="trailing" secondItem="eWk-nJ-UdJ" secondAttribute="trailing" constant="319" id="GF7-Aa-UQu"/>
+                            <constraint firstItem="eWk-nJ-UdJ" firstAttribute="centerX" secondItem="kkp-Tk-Qk2" secondAttribute="centerX" id="XpZ-jr-VcS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kkp-Tk-Qk2"/>
                     </view>
+                    <connections>
+                        <outlet property="foodNameTextField" destination="5OG-Bt-J2Y" id="D5u-iX-sPa"/>
+                        <outlet property="foodPriceTextField" destination="oQ4-Je-ac3" id="Xns-Qw-zgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSM-xh-Cth" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

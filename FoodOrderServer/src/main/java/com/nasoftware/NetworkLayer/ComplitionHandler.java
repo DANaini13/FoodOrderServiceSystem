@@ -1,4 +1,4 @@
-package com.nasoftware.LogicLayer;
+package com.nasoftware.NetworkLayer;
 
 import java.util.HashMap;
 
