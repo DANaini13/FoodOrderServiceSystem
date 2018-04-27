@@ -9,9 +9,43 @@
 import UIKit
 
 class FoodOrderTableViewController: UITableViewController {
+    
+    var data:[(String, String)] = []
+    var ordered:[(String, String)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateData()
+        self.tableView.reloadData()
+    }
+    
+    func updateData() {
+        data = []
+        let accountTemp = UserDefaults.standard.string(forKey: "account")
+        if let account = accountTemp {
+            MenuService.getMenu(account: account, callBack:  {[weak self] (result) in
+                guard result["error"]! == "0" else {
+                    let alertController = UIAlertController(title: "获取菜单失败！", message: result["error"], preferredStyle: .alert)
+                    let okAcount = UIAlertAction(title: "Ok", style: .cancel, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAcount)
+                    self?.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                for (key, value) in result {
+                    if key == "error" {
+                        continue
+                    }
+                    self?.data.append((key, value))
+                }
+                self?.tableView.reloadData()
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,67 +57,59 @@ class FoodOrderTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count + 1
     }
-
-    /*
+    
+    @IBAction func touchSummary(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "summaryItems", sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if indexPath.row >= self.data.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "foodOrderItemTotal", for: indexPath)
+            cell.textLabel?.text = "总价"
+            var value = 0.0
+            for x in self.ordered {
+                value += Double(x.1)!
+            }
+            cell.detailTextLabel?.text = "\(value)"
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "foodOrderItem", for: indexPath)
+            cell.textLabel?.text = self.data[indexPath.row].0
+            cell.detailTextLabel?.text = "价格：" + self.data[indexPath.row].1
+            return cell
+        }
+        
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "提醒", message: "确定要这份食物吗？", preferredStyle: .alert)
+        let okAcount = UIAlertAction(title: "好的", style: .default, handler: {
+            [weak self] action in
+            self?.ordered.append(((self?.data[indexPath.row].0)!, (self?.data[indexPath.row].1)!))
+            self?.tableView.reloadData()
+        })
+        let cancelAction = UIAlertAction(title: "点错了", style: .cancel, handler: {
+            action in
+            
+        })
+        alertController.addAction(okAcount)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "summaryItems" {
+            if let controller = segue.destination as? FoodSummaryTableViewController {
+                controller.data = self.ordered
+                controller.title = "我点过的"
+            }
+        }
     }
-    */
-
 }

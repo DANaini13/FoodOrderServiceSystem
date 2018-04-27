@@ -56,6 +56,26 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *     account:*******
  *     itemName: name
  * }
+ *
+ * Order Food
+ * {
+ *     command:orderFood
+ *     account:********
+ *     tableNumber: table number
+ * }
+ *
+ * Check Ordered Food
+ * {
+ *     command:checkOrder
+ *     account:********
+ * }
+ *
+ * {
+ *     error: 0 | fail reason
+ *     foodName1: tableNumber
+ *     foodName2: tableNumber
+ *     ....
+ * }
  */
 
 

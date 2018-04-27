@@ -47,9 +47,16 @@ class MenuService {
                                                               "account": account,
                                                               "itemName": foodName]
             , success: { (result) in
-                print("================================ 移除菜单项成功 ================================")
+                if result!["error"]! as! String == "0" {
+                    print("================================ 移除菜单项成功 ================================")
+                    callBack("success")
+                } else {
+                    print("================================ 移除菜单项失败 ================================")
+                    callBack(result!["error"]! as! String)
+                }
         }) { (errorDescription) in
             print("================================ 移除菜单项失败 ================================")
+            callBack(errorDescription)
         }
     }
 }

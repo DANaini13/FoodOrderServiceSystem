@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menus>
-  <menu accountID="shan27">
-    <food foodName="chicken">
-      <price>56.8</price>
+  <menu accountID="CCUTlmh">
+    <food foodName="Mapo_Toufu">
+      <price>56</price>
     </food>
-    <food foodName="shrimp">
+    <food foodName="Sichuan_Hotpot">
+      <price>108.2</price>
+    </food>
+    <food foodName="Shanghai_Baobao">
+      <price>56.3</price>
+    </food>
+    <food foodName="Checken">
+      <price>12.8</price>
+    </food>
+    <food foodName="Turkey_Chicken">
+      <price>12.8</price>
+    </food>
+    <food foodName="Chicken_Feet">
+      <price>56</price>
+    </food>
+    <food foodName="YangZhout_fried_rice">
+      <price>12</price>
+    </food>
+    <food foodName="Three_Fruits">
       <price>36</price>
     </food>
-    <food foodName="beef">
-      <price>89</price>
-    </food>
-    <food foodName="chicked">
-      <price>56.8</price>
-    </food>
   </menu>
-  <menu accountID="CCUTlmh" />
 </menus>
