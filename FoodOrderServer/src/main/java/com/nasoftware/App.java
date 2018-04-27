@@ -2,6 +2,8 @@ package com.nasoftware;
 
 import com.nasoftware.DataLayer.AccountDataService;
 import com.nasoftware.DataLayer.MenuDataService;
+import com.nasoftware.DataLayer.Order;
+import com.nasoftware.DataLayer.OrderDataService;
 import com.nasoftware.NetworkLayer.ServerManager;
 
 /**
@@ -62,6 +64,9 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *     command:orderFood
  *     account:********
  *     tableNumber: table number
+ *     foodName1:number
+ *     foodName2:number
+ *     ....
  * }
  *
  * Check Ordered Food
@@ -85,6 +90,7 @@ public class App {
         System.out.println("Server start!");
         AccountDataService.init();
         MenuDataService.init();
+        OrderDataService.init();
         ServerManager serverManager = new ServerManager(8888);
         serverManager.start();
     }

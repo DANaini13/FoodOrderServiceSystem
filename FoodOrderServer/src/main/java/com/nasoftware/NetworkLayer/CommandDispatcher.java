@@ -2,6 +2,7 @@ package com.nasoftware.NetworkLayer;
 
 import com.nasoftware.LogicLayer.AccountService;
 import com.nasoftware.LogicLayer.MenuService;
+import com.nasoftware.LogicLayer.OrderService;
 
 import java.util.HashMap;
 
@@ -14,6 +15,7 @@ public class CommandDispatcher {
             case "getMenu": MenuService.getMenu(args.get("account"), callBack); break;
             case "addMenuItem": MenuService.addMenuItem(args.get("account"), args.get("itemName"), args.get("itemPrice"), callBack); break;
             case "removeMenuItem": MenuService.removeMenuItem(args.get("account"), args.get("itemName"), callBack); break;
+            case "orderFood": OrderService.orderFood(args, callBack); break;
         }
     }
 }

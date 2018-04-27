@@ -334,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="op6-lG-sR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="2334"/>
+            <point key="canvasLocation" x="3425" y="2334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eye-Xx-BuU">
@@ -444,6 +444,9 @@
                             <rect key="frame" x="0.0" y="182" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="我有钱付账，就点这么多了"/>
+                            <connections>
+                                <action selector="touchedOrderButton:" destination="QcX-25-JQw" eventType="touchUpInside" id="ucF-3n-LCO"/>
+                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItem" textLabel="DaE-H0-FOh" detailTextLabel="s9l-qO-gJ2" rowHeight="77" style="IBUITableViewCellStyleValue1" id="4gt-ve-CiB">
