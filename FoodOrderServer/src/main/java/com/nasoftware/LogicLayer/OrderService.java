@@ -1,13 +1,10 @@
 package com.nasoftware.LogicLayer;
 
-import com.nasoftware.DataLayer.MenuDataService;
+import com.nasoftware.DataLayer.Order;
 import com.nasoftware.DataLayer.OrderDataService;
 import com.nasoftware.NetworkLayer.ComplitionHandler;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class OrderService {
     static public void orderFood(HashMap<String, String> args, ComplitionHandler callback) {
@@ -31,9 +28,16 @@ public class OrderService {
             foodList.add(entry.getKey().toString());
             numberList.add(Integer.parseInt(entry.getValue().toString()));
         }
+        LinkedList<Order> orderList = new LinkedList<>();
         for(int i=0; i<foodList.size(); ++i) {
-            OrderDataService.addOrder(account, foodList.get(i), table, numberList.get(i));
+            Order order = new Order();
+            order.foodName = foodList.get(i);
+            order.number = Integer.parseInt(String.valueOf(numberList.get(i)));
+            Date date = new Date();
+            order.orderedTime = date.toString();
+            orderList.add(order);
         }
+        OrderDataService.addOrder(account, orderList, table);
         HashMap<String, String> result = new HashMap<>();
         result.put("error", "0");
         callback.handler(result);

@@ -62,10 +62,17 @@ class FoodSummaryTableViewController: UITableViewController {
         OrderService.orderFoods(account: accountTemp!, foods: foods, tableNumber: 5) {
             (result) in
             if(result == "success") {
-                print("asdfasdfasdfasdfasdf")
+                self.performSegue(withIdentifier:"waitingController", sender: self)
             }
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "waitingController" {
+            if let controller = segue.destination as? WaitingTableViewController {
+                controller.data = self.data
+                controller.title = "请耐心等待"
+            }
+        }
+    }
 }

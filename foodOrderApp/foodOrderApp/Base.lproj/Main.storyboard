@@ -504,10 +504,57 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lwb-Vf-RD8"/>
+                    <connections>
+                        <segue destination="h9z-Q7-PWi" kind="showDetail" identifier="waitingController" id="yg5-aG-Mv1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSD-fJ-uoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1700" y="2333.7890625"/>
+        </scene>
+        <!--Waiting Table View Controller-->
+        <scene sceneID="T1O-Uv-H6d">
+            <objects>
+                <tableViewController id="h9z-Q7-PWi" customClass="WaitingTableViewController" customModule="foodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yrg-IF-Glc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="waitingCell" textLabel="If1-x4-6HJ" detailTextLabel="2sX-YJ-tGL" rowHeight="66" style="IBUITableViewCellStyleValue1" id="Yhk-wk-8hM">
+                                <rect key="frame" x="0.0" y="28" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yhk-wk-8hM" id="DpB-O4-44p">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="65.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="If1-x4-6HJ">
+                                            <rect key="frame" x="20" y="23" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2sX-YJ-tGL">
+                                            <rect key="frame" x="704" y="23" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h9z-Q7-PWi" id="xHq-8u-Q3B"/>
+                            <outlet property="delegate" destination="h9z-Q7-PWi" id="IBe-fh-kC7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0P-rW-VWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2553.90625" y="2333.7890625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w99-lj-ZBg">
