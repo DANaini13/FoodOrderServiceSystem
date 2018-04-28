@@ -54,3 +54,9 @@
 > 2. 在 ```终端```中运行 ```pod install``` 指令。 （仅第一次执行）
 > 3. 在 ```终端```中运行 ```open foodOrderApp.xcworkspace``` 指令来通过 Xcode 打开项目。
 > 4. 选择任意Ipad 设备，点击 Xcode 左上角的绿色播放按钮来运行客户端.
+
+### 架构说明
+> 1. 服务器用例图如下
+![Image of Screen Shot](https://github.com/DANaini13/FoodOrderServiceSystem/blob/master/Resources/Server.png)
+> 2. 客户端用例图如下
+![Image of Screen Shot](https://github.com/DANaini13/FoodOrderServiceSystem/blob/master/Resources/client.png)
