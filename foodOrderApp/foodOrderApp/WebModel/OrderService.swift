@@ -36,4 +36,38 @@ class OrderService
             callBack(errorDescription)
         })
     }
+    
+    class func registerOrderChecker(account:String, callBack:@escaping ([(String, String)]) -> Void) {
+        var buffer:[(String, String)] = []
+        DispatchQueue.global(qos: .utility).async {
+            while(true) {
+                FOSNetworking.get(url: FOSNetworking.address, paras: ["account": account,
+                                                                      "command": "checkOrder"]
+                    ,success: {(result) in
+                        print("================================ 已刷新订单信息 ================================")
+                        if result!["error"]! as! String == "0" {
+                            buffer = []
+                            for x in result! {
+                                if(x.key == "error") {
+                                    continue
+                                }
+                                let parts = x.key.components(separatedBy: "+")
+                                let name = parts[1]
+                                let table = parts[0]
+                                let rightParts = (x.value as! String).components(separatedBy: "+")
+                                let time = rightParts[1]
+                                let number = rightParts[0]
+                                let ready = rightParts[2]
+                                let value = table + "+" + time + "+" + number + "+" + ready
+                                buffer.append((name, value))
+                            }
+                            callBack(buffer)
+                        }
+                }, failture: { (errorDescription) in
+                    print("================================ 新订单信息失败 ================================")
+                })
+                sleep(3)
+            }
+        }
+    }
 }

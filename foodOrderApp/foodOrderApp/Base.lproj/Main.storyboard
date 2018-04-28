@@ -102,38 +102,57 @@
             </objects>
             <point key="canvasLocation" x="25" y="37.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Manager View Controller-->
         <scene sceneID="rYh-5E-nJl">
             <objects>
-                <viewController id="f1I-Bo-vju" sceneMemberID="viewController">
+                <viewController id="f1I-Bo-vju" customClass="ManagerViewController" customModule="foodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4e-oo-czR">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVJ-9n-utF">
-                                <rect key="frame" x="338" y="265" width="92" height="30"/>
-                                <state key="normal" title="管理人员入口"/>
-                                <connections>
-                                    <segue destination="oKd-hH-QoO" kind="show" id="flF-Qg-4bg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUH-xR-Iq5">
-                                <rect key="frame" x="353" y="374" width="62" height="30"/>
-                                <state key="normal" title="食客入口"/>
-                                <connections>
-                                    <segue destination="eIp-Ry-ZAF" kind="show" id="c9p-qs-k70"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="98G-Z5-gN8">
+                                <rect key="frame" x="302" y="205" width="164" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVJ-9n-utF">
+                                        <rect key="frame" x="36" y="0.0" width="92" height="30"/>
+                                        <state key="normal" title="管理人员入口"/>
+                                        <connections>
+                                            <segue destination="oKd-hH-QoO" kind="show" id="flF-Qg-4bg"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-9t-Lgc">
+                                        <rect key="frame" x="0.0" y="80" width="164" height="70"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请工作人员填写餐桌号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2l-0m-tSz">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUH-xR-Iq5">
+                                                <rect key="frame" x="51" y="40" width="62" height="30"/>
+                                                <state key="normal" title="食客入口"/>
+                                                <connections>
+                                                    <action selector="touchGuest:" destination="f1I-Bo-vju" eventType="touchUpInside" id="9hp-P2-nfc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NVJ-9n-utF" firstAttribute="centerX" secondItem="VUH-xR-Iq5" secondAttribute="centerX" id="GT0-Jt-WW0"/>
-                            <constraint firstItem="NVJ-9n-utF" firstAttribute="top" secondItem="wYJ-BU-oOP" secondAttribute="top" constant="245" id="LJT-Wv-Qrv"/>
-                            <constraint firstItem="NVJ-9n-utF" firstAttribute="centerX" secondItem="J4e-oo-czR" secondAttribute="centerX" id="SlF-Ub-cZs"/>
-                            <constraint firstItem="VUH-xR-Iq5" firstAttribute="top" secondItem="NVJ-9n-utF" secondAttribute="bottom" constant="79" id="TaE-Hn-Nj2"/>
+                            <constraint firstItem="wYJ-BU-oOP" firstAttribute="trailing" secondItem="98G-Z5-gN8" secondAttribute="trailing" constant="302" id="6b3-tl-Zja"/>
+                            <constraint firstItem="98G-Z5-gN8" firstAttribute="top" secondItem="wYJ-BU-oOP" secondAttribute="top" constant="185" id="ROR-hD-869"/>
+                            <constraint firstItem="98G-Z5-gN8" firstAttribute="leading" secondItem="wYJ-BU-oOP" secondAttribute="leading" constant="302" id="jRp-Zo-XKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wYJ-BU-oOP"/>
                     </view>
+                    <connections>
+                        <outlet property="tableNumberTextField" destination="E2l-0m-tSz" id="mDa-WR-YKu"/>
+                        <segue destination="eIp-Ry-ZAF" kind="show" identifier="costumer" id="M1N-ck-OaS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAa-sN-j7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,6 +179,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-vd-3jt">
                                         <rect key="frame" x="0.0" y="130" width="92" height="30"/>
                                         <state key="normal" title="后厨"/>
+                                        <connections>
+                                            <segue destination="EuY-zd-Pwg" kind="showDetail" id="hWY-j7-AoM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -637,6 +659,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsU-Z9-3ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855" y="38"/>
+        </scene>
+        <!--Kitchen Table View Controller-->
+        <scene sceneID="97E-QX-AVf">
+            <objects>
+                <tableViewController id="EuY-zd-Pwg" customClass="KitchenTableViewController" customModule="foodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ePU-JM-X0p">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="kitchenCell" rowHeight="75" id="2Li-Kp-Ziv" customClass="KitchenTableViewCell" customModule="foodOrderApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Li-Kp-Ziv" id="OyX-D5-ydE">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoA-xD-24R">
+                                            <rect key="frame" x="20" y="10" width="728" height="54.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="652-Fj-svt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="666" height="54.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="FoodName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqJ-el-DRi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="87" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bA4-45-fcq">
+                                                            <rect key="frame" x="0.0" y="34" width="41" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-09-MnG">
+                                                    <rect key="frame" x="666" y="0.0" width="62" height="54.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gua-jk-4Az">
+                                                            <rect key="frame" x="24" y="0.0" width="38" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-jr-G5K">
+                                                            <rect key="frame" x="0.0" y="34" width="62" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="HoA-xD-24R" secondAttribute="trailing" constant="20" id="4VM-3u-eh2"/>
+                                        <constraint firstItem="HoA-xD-24R" firstAttribute="leading" secondItem="OyX-D5-ydE" secondAttribute="leading" constant="20" id="8Qc-yl-b19"/>
+                                        <constraint firstItem="HoA-xD-24R" firstAttribute="top" secondItem="OyX-D5-ydE" secondAttribute="top" constant="10" id="Mcg-SL-abC"/>
+                                        <constraint firstAttribute="bottom" secondItem="HoA-xD-24R" secondAttribute="bottom" constant="10" id="tLD-iI-x0x"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foodName" destination="FqJ-el-DRi" id="wff-ew-Yd7"/>
+                                    <outlet property="number" destination="Ifx-jr-G5K" id="gW6-tX-WSf"/>
+                                    <outlet property="table" destination="bA4-45-fcq" id="Bj2-9u-1Qy"/>
+                                    <outlet property="time" destination="Gua-jk-4Az" id="AxE-Ef-2Ss"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EuY-zd-Pwg" id="QKE-3L-68G"/>
+                            <outlet property="delegate" destination="EuY-zd-Pwg" id="kFq-ii-CEL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZK-Yu-wmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="37.5"/>
         </scene>
     </scenes>
 </document>

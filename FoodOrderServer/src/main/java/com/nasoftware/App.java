@@ -77,8 +77,8 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *
  * {
  *     error: 0 | fail reason
- *     foodName1: tableNumber
- *     foodName2: tableNumber
+ *     table+foodName1: number+time+finished
+ *     table+foodName2: number+time+finished
  *     ....
  * }
  */

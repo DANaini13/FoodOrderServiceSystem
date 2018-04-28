@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */; };
+		1409B7AC209476DD0034003B /* KitchenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409B7AB209476DD0034003B /* KitchenTableViewController.swift */; };
+		1409B7AE209487E50034003B /* KitchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409B7AD209487E50034003B /* KitchenTableViewCell.swift */; };
+		1409B7B0209490D90034003B /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409B7AF209490D90034003B /* ManagerViewController.swift */; };
 		14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */; };
 		1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422D24720744CE000B5F1F6 /* AccountService.swift */; };
 		143664542093060F00170A8E /* FoodSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664532093060F00170A8E /* FoodSummaryTableViewController.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		1402E7E82073CA9B00CA6604 /* FOSNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOSNetworking.swift; sourceTree = "<group>"; };
+		1409B7AB209476DD0034003B /* KitchenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenTableViewController.swift; sourceTree = "<group>"; };
+		1409B7AD209487E50034003B /* KitchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenTableViewCell.swift; sourceTree = "<group>"; };
+		1409B7AF209490D90034003B /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		1422D24720744CE000B5F1F6 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		143664532093060F00170A8E /* FoodSummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSummaryTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,15 @@
 			path = WebModel;
 			sourceTree = "<group>";
 		};
+		1409B7AA209476A70034003B /* Kitchen */ = {
+			isa = PBXGroup;
+			children = (
+				1409B7AB209476DD0034003B /* KitchenTableViewController.swift */,
+				1409B7AD209487E50034003B /* KitchenTableViewCell.swift */,
+			);
+			path = Kitchen;
+			sourceTree = "<group>";
+		};
 		1418EA32206B96FD00506E77 /* HelpFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +146,7 @@
 				14154BB92078D6A300DD9D20 /* AddFoodViewController.swift */,
 				14F5E60F208BFB2300EB8B86 /* RemoveFoodViewController.swift */,
 				14FD96362078DD2C006539A2 /* MenuManageTableViewController.swift */,
+				1409B7AF209490D90034003B /* ManagerViewController.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -188,6 +204,7 @@
 		7B978ED92063B1D600ABB0D5 /* foodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1409B7AA209476A70034003B /* Kitchen */,
 				14B2A5842078D3470047EE1E /* foodOrder */,
 				14716DB12077B27C00FAFD0D /* Manager */,
 				14009552206B9E5C000829EC /* WebModel */,
@@ -406,6 +423,7 @@
 				7B978EE32063B1D600ABB0D5 /* foodOrderApp.xcdatamodeld in Sources */,
 				143664542093060F00170A8E /* FoodSummaryTableViewController.swift in Sources */,
 				14FD96372078DD2C006539A2 /* MenuManageTableViewController.swift in Sources */,
+				1409B7B0209490D90034003B /* ManagerViewController.swift in Sources */,
 				14B7F60D2094628B0013968A /* WaitingTableViewController.swift in Sources */,
 				14154BBA2078D6A300DD9D20 /* AddFoodViewController.swift in Sources */,
 				1422D24820744CE000B5F1F6 /* AccountService.swift in Sources */,
@@ -413,6 +431,8 @@
 				1402E7E92073CA9B00CA6604 /* FOSNetworking.swift in Sources */,
 				14F5E610208BFB2300EB8B86 /* RemoveFoodViewController.swift in Sources */,
 				147811DF207E49350046A492 /* MenuService.swift in Sources */,
+				1409B7AC209476DD0034003B /* KitchenTableViewController.swift in Sources */,
+				1409B7AE209487E50034003B /* KitchenTableViewCell.swift in Sources */,
 				14877780206B9B8C006B0365 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

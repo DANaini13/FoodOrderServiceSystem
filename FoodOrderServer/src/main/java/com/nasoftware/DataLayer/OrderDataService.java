@@ -24,4 +24,28 @@ public class OrderDataService {
         orderMap.put(account, orders);
         lock.unlock();
     }
+
+    static public HashMap<String, LinkedList<Order>> getOrderMap(String account) {
+        HashMap<String, LinkedList<Order>> result = new HashMap<>();
+        lock.lock();
+        Iterator it = orderMap.get(account).entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry)it.next();
+            Iterator listIt = ((LinkedList<Order>)entry.getValue()).iterator();
+            String table = entry.getKey().toString();
+            LinkedList<Order> list = new LinkedList<>();
+            while (listIt.hasNext()) {
+                Order original = (Order)listIt.next();
+                Order order = new Order();
+                order.number = original.number;
+                order.orderedTime = original.orderedTime;
+                order.foodName = original.foodName;
+                order.finished = original.finished;
+                list.add(order);
+            }
+            result.put(table, list);
+        }
+        lock.unlock();
+        return result;
+    }
 }

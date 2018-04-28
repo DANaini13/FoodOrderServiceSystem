@@ -42,4 +42,21 @@ public class OrderService {
         result.put("error", "0");
         callback.handler(result);
     }
+
+    static public void checkOrder(String account, ComplitionHandler callback) {
+        HashMap result = new HashMap<String, String>();
+        result.put("error", "0");
+        HashMap map = OrderDataService.getOrderMap(account);
+        Iterator it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            String table = entry.getKey().toString();
+            Iterator listIt = ((LinkedList<Order>)entry.getValue()).iterator();
+            while (listIt.hasNext()) {
+                Order original = (Order)listIt.next();
+                result.put(table + "+" + original.foodName, original.number + "+" + original.orderedTime + "+" + original.finished);
+            }
+        }
+        callback.handler(result);
+    }
 }

@@ -59,7 +59,8 @@ class FoodSummaryTableViewController: UITableViewController {
             foods.append(x.0)
         }
         let accountTemp = UserDefaults.standard.string(forKey: "account")
-        OrderService.orderFoods(account: accountTemp!, foods: foods, tableNumber: 5) {
+        let tableNumber = Int(UserDefaults.standard.string(forKey: "table")!)
+        OrderService.orderFoods(account: accountTemp!, foods: foods, tableNumber: tableNumber!) {
             (result) in
             if(result == "success") {
                 self.performSegue(withIdentifier:"waitingController", sender: self)
