@@ -21,9 +21,9 @@ public class OrderDataService {
         Date date = new Date();
         order.orderedTime = date.toString();
         lock.lock();
-        LinkedList<Order> orders = (LinkedList<Order>) orderMap.get(account);
+        LinkedList<Order> orders = orderMap.get(account);
         if(orders == null) {
-            orders = new LinkedList<Order>();
+            orders = new LinkedList();
         }
         Iterator it = orders.iterator();
         while (it.hasNext()) {
@@ -35,6 +35,7 @@ public class OrderDataService {
             }
         }
         orders.add(order);
+        orderMap.put(account, orders);
         lock.unlock();
     }
 }

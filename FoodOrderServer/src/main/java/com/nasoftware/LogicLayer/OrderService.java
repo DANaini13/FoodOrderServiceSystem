@@ -1,5 +1,6 @@
 package com.nasoftware.LogicLayer;
 
+import com.nasoftware.DataLayer.MenuDataService;
 import com.nasoftware.DataLayer.OrderDataService;
 import com.nasoftware.NetworkLayer.ComplitionHandler;
 
@@ -33,5 +34,8 @@ public class OrderService {
         for(int i=0; i<foodList.size(); ++i) {
             OrderDataService.addOrder(account, foodList.get(i), table, numberList.get(i));
         }
+        HashMap<String, String> result = new HashMap<>();
+        result.put("error", "0");
+        callback.handler(result);
     }
 }

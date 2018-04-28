@@ -54,7 +54,17 @@ class FoodSummaryTableViewController: UITableViewController {
         }
     }
     @IBAction func touchedOrderButton(_ sender: UIButton) {
-        
+        var foods:[String] = []
+        for x in data {
+            foods.append(x.0)
+        }
+        let accountTemp = UserDefaults.standard.string(forKey: "account")
+        OrderService.orderFoods(account: accountTemp!, foods: foods, tableNumber: 5) {
+            (result) in
+            if(result == "success") {
+                print("asdfasdfasdfasdfasdf")
+            }
+        }
     }
     
     
