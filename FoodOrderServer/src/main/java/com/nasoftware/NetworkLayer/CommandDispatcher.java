@@ -17,6 +17,8 @@ public class CommandDispatcher {
             case "removeMenuItem": MenuService.removeMenuItem(args.get("account"), args.get("itemName"), callBack); break;
             case "orderFood": OrderService.orderFood(args, callBack); break;
             case "checkOrder": OrderService.checkOrder(args.get("account"), callBack); break;
+            case "checkOrderStatus": OrderService.checkOrderStatus(args.get("account"), args.get("table"), callBack); break;
+            case "finishedFood": OrderService.changeFoodStatus(args.get("account"), args.get("table"), args.get("foodName"), callBack); break;
         }
     }
 }

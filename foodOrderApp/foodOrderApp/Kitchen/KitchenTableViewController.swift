@@ -19,7 +19,11 @@ class KitchenTableViewController: UITableViewController {
             [weak self] (result) in
             self?.data = []
             for x in result {
-                self?.data.append((x.0, x.1))
+                let parts = x.1.components(separatedBy: "+");
+                let ready = parts[3]
+                if ready == "false" {
+                    self?.data.append((x.0, x.1))
+                }
             }
             self?.tableView.reloadData()
         }
@@ -44,15 +48,33 @@ class KitchenTableViewController: UITableViewController {
         let table = parts[0]
         let time = parts[1]
         let number = parts[2]
-        let ready = parts[3]
+        //let ready = parts[3]
         cell.foodName.text = self.data[indexPath.row].0
         cell.table.text = "餐桌：" + table
         cell.time.text = "下单时间：" + time
         cell.number.text = "数量：" + number
         return cell
     }
- 
 
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "提醒", message: "这份食物做完了吗？", preferredStyle: .alert)
+        let accountTemp = UserDefaults.standard.string(forKey: "account")
+        let tableNumber = UserDefaults.standard.string(forKey: "table")
+        let okAcount = UIAlertAction(title: "好的", style: .default, handler: {
+            [weak self] action in
+            OrderService.finishFood(account: accountTemp!, table: tableNumber!, foodName: (self?.data[indexPath.row].0)!, callBack: { (result) in
+                
+            })
+        })
+        let cancelAction = UIAlertAction(title: "点错了", style: .cancel, handler: {
+            action in
+        })
+        alertController.addAction(okAcount)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -73,29 +95,5 @@ class KitchenTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -48,23 +48,6 @@ public class Server extends Thread {
                             response(resultObj);
                         });
                     }
-                    /**
-                     * 获得POST参数
-                     * 1.获取请求内容长度
-                     */
-                    if(requestHeader.startsWith("Content-Length")){
-                        int begin=requestHeader.indexOf("Content-Lengh:")+"Content-Length:".length();
-                        String postParamterLength=requestHeader.substring(begin).trim();
-                        contentLength=Integer.parseInt(postParamterLength);
-                        System.out.println("POST参数长度是："+Integer.parseInt(postParamterLength));
-                    }
-                }
-                StringBuffer sb = new StringBuffer();
-                if (contentLength > 0) {
-                    for (int i = 0; i < contentLength; i++) {
-                        sb.append((char) bd.read());
-                    }
-                    System.out.println("POST参数是：" + sb.toString());
                 }
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -87,6 +70,7 @@ public class Server extends Thread {
                 json.put(entry.getKey(), entry.getValue());
             }
             pw.println(json.toString());
+            System.out.println("JSON: " + json.toString());
             pw.flush();
             socket.close();
         } catch (JSONException e) {

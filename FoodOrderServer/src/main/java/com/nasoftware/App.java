@@ -2,7 +2,6 @@ package com.nasoftware;
 
 import com.nasoftware.DataLayer.AccountDataService;
 import com.nasoftware.DataLayer.MenuDataService;
-import com.nasoftware.DataLayer.Order;
 import com.nasoftware.DataLayer.OrderDataService;
 import com.nasoftware.NetworkLayer.ServerManager;
 
@@ -80,6 +79,30 @@ import com.nasoftware.NetworkLayer.ServerManager;
  *     table+foodName1: number+time+finished
  *     table+foodName2: number+time+finished
  *     ....
+ * }
+ *
+ * Check Order Status
+ * {
+ *     command:checkOrderStatus
+ *     account:********
+ *     table:table number
+ * }
+ *
+ * {
+ *     foodName: 1|0+number
+ *     foodName1: 1|0+number
+ * }
+ *
+ * Finished Food
+ * {
+ *     command:finishedFood
+ *     account:********
+ *     table: table number
+ *     foodName: food name
+ * }
+ *
+ * {
+ *     result:success | failed
  * }
  */
 

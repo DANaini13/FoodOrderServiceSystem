@@ -70,4 +70,41 @@ class OrderService
             }
         }
     }
+    
+    class func registerOrderStatusChecker(account: String, table:String, callBack:@escaping ([(String, String)]) -> Void) {
+        var buffer:[(String, String)] = []
+        DispatchQueue.global(qos: .utility).async {
+            while(true) {
+                FOSNetworking.get(url: FOSNetworking.address, paras: ["account": account,
+                                                                      "command": "checkOrderStatus",
+                                                                      "table": table]
+                    ,success: {(result) in
+                        print("================================ 已刷新订单状态 ================================")
+                        buffer = []
+                        for x in result! {
+                            let name = x.key;
+                            let finished = x.value;
+                            buffer.append((name, finished as! String))
+                        }
+                        callBack(buffer)
+                }, failture: { (errorDescription) in
+                    print("================================ 新订单状态失败 ================================")
+                })
+                sleep(3)
+            }
+        }
+    }
+    
+    class func finishFood(account: String, table: String, foodName: String, callBack:@escaping (String) -> Void) {
+        FOSNetworking.get(url: FOSNetworking.address, paras: ["account": account,
+                                                              "command": "finishedFood",
+                                                              "table": table,
+                                                              "foodName": foodName]
+            ,success: {(result) in
+                print("================================ 更新了订单 ================================")
+                callBack(result!["result"] as! String)
+        }, failture: { (errorDescription) in
+            print("================================ 更新订单失败 ================================")
+        })
+    }
 }

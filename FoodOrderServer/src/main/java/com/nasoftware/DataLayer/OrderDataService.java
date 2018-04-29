@@ -28,6 +28,10 @@ public class OrderDataService {
     static public HashMap<String, LinkedList<Order>> getOrderMap(String account) {
         HashMap<String, LinkedList<Order>> result = new HashMap<>();
         lock.lock();
+        if(orderMap.get(account) == null) {
+            lock.unlock();
+            return result;
+        }
         Iterator it = orderMap.get(account).entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry)it.next();
@@ -47,5 +51,26 @@ public class OrderDataService {
         }
         lock.unlock();
         return result;
+    }
+
+    static public boolean changeFoodStatus(String account, String table, String foodName) {
+        lock.lock();
+        HashMap<String, LinkedList<Order>> orders = orderMap.get(account);
+        if(orders == null) {
+            lock.unlock();
+            return false;
+        }
+        LinkedList<Order> foods = orders.get(table);
+        Iterator it = foods.iterator();
+        while (it.hasNext()) {
+            Order order = (Order) it.next();
+            if(foodName.equals(order.foodName)) {
+                order.finished = true;
+                lock.unlock();
+                return true;
+            }
+        }
+        lock.unlock();
+        return false;
     }
 }

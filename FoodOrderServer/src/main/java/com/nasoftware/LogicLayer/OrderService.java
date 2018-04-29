@@ -59,4 +59,35 @@ public class OrderService {
         }
         callback.handler(result);
     }
+
+    static public void checkOrderStatus(String account, String table, ComplitionHandler callback) {
+        HashMap<String, String> result = new HashMap<>();
+        HashMap orders;
+        orders = OrderDataService.getOrderMap(account);
+        if(orders == null) {
+            callback.handler(result);
+            return;
+        }
+        LinkedList<Order> list = (LinkedList<Order>) orders.get(table);
+        if(list == null) {
+            callback.handler(result);
+            return;
+        }
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            Order order = (Order) it.next();
+            result.put(order.foodName, order.finished.toString() + "+" + order.number);
+        }
+        callback.handler(result);
+    }
+
+    static public void changeFoodStatus(String account, String table, String food, ComplitionHandler callback) {
+        Boolean result = OrderDataService.changeFoodStatus(account, table, food);
+        HashMap<String, String> response = new HashMap<>();
+        if(result)
+            response.put("result", "success");
+        else
+            response.put("result", "找不到对应的食物！");
+        callback.handler(response);
+    }
 }
