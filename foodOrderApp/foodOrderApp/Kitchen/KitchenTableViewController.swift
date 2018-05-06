@@ -60,10 +60,10 @@ class KitchenTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(title: "提醒", message: "这份食物做完了吗？", preferredStyle: .alert)
         let accountTemp = UserDefaults.standard.string(forKey: "account")
-        let tableNumber = UserDefaults.standard.string(forKey: "table")
+        let table = self.data[indexPath.row].1.components(separatedBy: "+")[0]
         let okAcount = UIAlertAction(title: "好的", style: .default, handler: {
             [weak self] action in
-            OrderService.finishFood(account: accountTemp!, table: tableNumber!, foodName: (self?.data[indexPath.row].0)!, callBack: { (result) in
+            OrderService.finishFood(account: accountTemp!, table: table, foodName: (self?.data[indexPath.row].0)!, callBack: { (result) in
                 
             })
         })

@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menus>
-  <menu accountID="CCUTlmh">
+  <menu accountID="abc">
+    <food foodName="HUOGUO">
+      <price>800</price>
+    </food>
+    <food foodName="xia">
+      <price>5000</price>
+    </food>
+    <food foodName="apple">
+      <price>6</price>
+    </food>
+    <food foodName="MIANTIao">
+      <price>500</price>
+    </food>
+    <food foodName="szy">
+      <price>0</price>
+    </food>
+    <food foodName="egg">
+      <price>6</price>
+    </food>
+    <food foodName="CHICKEN">
+      <price>70</price>
+    </food>
+  </menu>
+  <menu accountID="szy">
+    <food foodName="apple">
+      <price>1</price>
+    </food>
+    <food foodName="szy">
+      <price>0</price>
+    </food>
+    <food foodName="egg">
+      <price>2</price>
+    </food>
+    <food foodName="tomato">
+      <price>3</price>
+    </food>
+  </menu>
+  <menu accountID="test">
     <food foodName="Mapo_Toufu">
       <price>56</price>
     </food>
@@ -24,6 +61,65 @@
     </food>
     <food foodName="Three_Fruits">
       <price>36</price>
+    </food>
+  </menu>
+  <menu accountID="lmh" />
+  <menu accountID="Germy">
+    <food foodName="soup">
+      <price>258</price>
+    </food>
+    <food foodName="lobster">
+      <price>888</price>
+    </food>
+    <food foodName="ricewine">
+      <price>68</price>
+    </food>
+    <food foodName="beef">
+      <price>398</price>
+    </food>
+    <food foodName="seacucumber">
+      <price>288</price>
+    </food>
+    <food foodName="grouper">
+      <price>388</price>
+    </food>
+    <food foodName="potato">
+      <price>36</price>
+    </food>
+    <food foodName="cake">
+      <price>98</price>
+    </food>
+    <food foodName="roastduck">
+      <price>168</price>
+    </food>
+    <food foodName="abalone">
+      <price>88</price>
+    </food>
+    <food foodName="mushroom">
+      <price>188</price>
+    </food>
+    <food foodName="crab">
+      <price>588</price>
+    </food>
+    <food foodName="beer">
+      <price>98</price>
+    </food>
+  </menu>
+  <menu accountID="fym">
+    <food foodName="BBQ">
+      <price>2000</price>
+    </food>
+    <food foodName="PIZZA">
+      <price>80</price>
+    </food>
+    <food foodName="hanbaobao">
+      <price>15</price>
+    </food>
+    <food foodName="rtyuio">
+      <price>30</price>
+    </food>
+    <food foodName="PAI">
+      <price>50</price>
     </food>
   </menu>
 </menus>

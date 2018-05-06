@@ -85,6 +85,10 @@ public class MenuDataService {
     static public boolean addMenuItem(String account, String menuItem, String price) {
         lock.lock();
         HashMap<String, String> menu = menuMap.get(account);
+        if(menu == null) {
+            menu = new HashMap<>();
+            menuMap.put(account, menu);
+        }
         if(menu.containsKey(menuItem)) {
             lock.unlock();
             return false;

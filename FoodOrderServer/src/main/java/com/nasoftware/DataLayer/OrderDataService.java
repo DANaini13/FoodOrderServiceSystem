@@ -61,6 +61,10 @@ public class OrderDataService {
             return false;
         }
         LinkedList<Order> foods = orders.get(table);
+        if(foods == null) {
+            lock.unlock();
+            return false;
+        }
         Iterator it = foods.iterator();
         while (it.hasNext()) {
             Order order = (Order) it.next();

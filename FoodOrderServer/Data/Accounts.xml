@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <accounts>
-  <account accountID="CCUTlmh">
-    <password>CCUTlmh</password>
+  <account accountID="abc">
+    <password>abc</password>
+  </account>
+  <account accountID="szy">
+    <password>szy</password>
+  </account>
+  <account accountID="test">
+    <password>test</password>
+  </account>
+  <account accountID="lmh">
+    <password>lmh</password>
   </account>
   <account accountID="1111">
     <password>1111</password>
+  </account>
+  <account accountID="Germy">
+    <password>123456</password>
+  </account>
+  <account accountID="fym">
+    <password>fym</password>
   </account>
 </accounts>
